@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script>
+      if ('serviceWorker' in navigator) {
+  window.addEventListener('load', async () => {
+    try {
+      const registration = await navigator.serviceWorker.register('/service-worker.js');
+      console.log('Service worker registered successfully', registration);
+    } catch (err) {
+      console.error('Error registering service worker', err);
+    }
+  });
+}
+
+      
+      async function checkStorage() {
+  if (navigator.storage && navigator.storage.estimate) {
+    const quota = await navigator.storage.estimate();
+    const percentageUsed = (quota.usage / quota.quota) * 100;
+    console.log(`You've used ${percentageUsed}% of the available storage.`);
+    const remaining = quota.quota - quota.usage;
+    console.log(`You can write up to ${remaining} more bytes.`);
+  }
+}
+checkStorage()
+    </script>
+    <!--<link rel="manifest" href="manifest.json" />-->
+  </head>
+  <body class="aspect-video">
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

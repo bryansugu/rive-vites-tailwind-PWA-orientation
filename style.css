@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  overflow: hidden;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #ff4013;
+  margin-top: 60px;
+}
+#rive-canvas{
+    max-height: 100vh;
+      filter: hue-rotate(180deg);
+}
+#buton-canvas{
+  width: 300px;
+  bottom: 5%;
+  margin-left: calc(50% - 150px);
+  margin-right: auto;
+  position: absolute;
+  filter: hue-rotate(285deg);
+}
+.back-animation{
+  background-image: url('./back.webp');
+      background-size: cover;
+ display:flex;
+  position: fixed;
+  top: 0;
+    left: 0;
+    height: 100%;
+  width: 100%;
+    z-index: -1;
+          align-items: center;
+    justify-content: center;
+}
